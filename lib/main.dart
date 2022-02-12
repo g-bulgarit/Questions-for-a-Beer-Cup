@@ -67,7 +67,7 @@ class _MyHomePageState extends State<MyHomePage> {
     showDialog(
         context: context,
         builder: (BuildContext context) {
-          return BeerQuestionDialog("abcde");
+          return BeerQuestionDialog();
         });
   }
 
