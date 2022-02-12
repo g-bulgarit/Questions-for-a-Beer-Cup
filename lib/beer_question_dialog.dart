@@ -4,17 +4,12 @@ import 'package:flutter/material.dart';
 import 'constants.dart';
 
 class BeerQuestionDialog extends StatefulWidget {
-  BeerQuestionDialog();
-  String questionToDisplay = "";
-
+  const BeerQuestionDialog({Key? key}) : super(key: key);
   @override
   _BeerQuestionDialogState createState() => _BeerQuestionDialogState();
 }
 
 class _BeerQuestionDialogState extends State<BeerQuestionDialog> {
-  //String questionToDisplay = "כמה מרמיטות נכנסות לבר?";
-  // Fetch question here
-
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -28,6 +23,7 @@ class _BeerQuestionDialogState extends State<BeerQuestionDialog> {
   }
 
   beerQuestion(context) {
+    // Build a dialog with a randomly selected question.
     String questionToDisplay = fetchRandomQuestion();
 
     return Container(
@@ -51,9 +47,8 @@ class _BeerQuestionDialogState extends State<BeerQuestionDialog> {
   }
 
   fetchRandomQuestion() {
+    // Randomly select a question from list.
     final _random = Random();
-    // generate a random index based on the list length
-    // and use it to retrieve the element
     var selectedQuestion = QuestionList[_random.nextInt(QuestionList.length)];
     return selectedQuestion;
   }
