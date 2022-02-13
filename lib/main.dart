@@ -45,7 +45,7 @@ class _MyHomePageState extends State<MyHomePage> {
       decoration: const BoxDecoration(
           gradient: LinearGradient(colors: <Color>[
         Color.fromARGB(255, 97, 116, 228),
-        Color.fromARGB(255, 154, 167, 241)
+        Color.fromARGB(255, 37, 54, 146)
       ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
       child: Center(
           child: Material(
@@ -55,9 +55,9 @@ class _MyHomePageState extends State<MyHomePage> {
         color: Colors.transparent,
         child: Ink.image(
           image: const AssetImage('beer_new.png'),
-          fit: BoxFit.fitHeight,
-          width: MediaQuery.of(context).size.width * 0.4,
-          height: MediaQuery.of(context).size.height * 0.4,
+          fit: BoxFit.scaleDown,
+          width: MediaQuery.of(context).size.width * 0.6,
+          height: MediaQuery.of(context).size.height * 0.6,
           child: InkWell(
             onTap: summonBeerQuestion,
           ),
