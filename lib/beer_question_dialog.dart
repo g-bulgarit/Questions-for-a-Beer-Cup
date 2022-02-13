@@ -43,7 +43,7 @@ class _BeerQuestionDialogState extends State<BeerQuestionDialog> {
                 textAlign: TextAlign.center,
                 textDirection: TextDirection.rtl,
                 style: TextStyle(
-                    fontSize: 70,
+                    fontSize: MediaQuery.of(context).size.height * 0.05,
                     foreground: Paint()
                       ..style = PaintingStyle.stroke
                       ..strokeWidth = 4
@@ -53,7 +53,9 @@ class _BeerQuestionDialogState extends State<BeerQuestionDialog> {
                 questionToDisplay,
                 textAlign: TextAlign.center,
                 textDirection: TextDirection.rtl,
-                style: TextStyle(fontSize: 70, color: Colors.white),
+                style: TextStyle(
+                    fontSize: MediaQuery.of(context).size.height * 0.05,
+                    color: Colors.white),
               ),
             ],
           )
