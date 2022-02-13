@@ -36,11 +36,27 @@ class _BeerQuestionDialogState extends State<BeerQuestionDialog> {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            questionToDisplay,
-            textAlign: TextAlign.center,
-            textDirection: TextDirection.rtl,
-          ),
+          Stack(
+            children: [
+              Text(
+                questionToDisplay,
+                textAlign: TextAlign.center,
+                textDirection: TextDirection.rtl,
+                style: TextStyle(
+                    fontSize: 70,
+                    foreground: Paint()
+                      ..style = PaintingStyle.stroke
+                      ..strokeWidth = 4
+                      ..color = Colors.black),
+              ),
+              Text(
+                questionToDisplay,
+                textAlign: TextAlign.center,
+                textDirection: TextDirection.rtl,
+                style: TextStyle(fontSize: 70, color: Colors.white),
+              ),
+            ],
+          )
         ],
       ),
     );
