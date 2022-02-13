@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'beer_question_dialog.dart';
+import 'package:flutter_animated_dialog/flutter_animated_dialog.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,11 +32,14 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   void summonBeerQuestion() {
     // Summons a new dialog with a question.
-    showDialog(
+    showAnimatedDialog(
         context: context,
         builder: (BuildContext context) {
           return const BeerQuestionDialog();
-        });
+        },
+        barrierDismissible: true,
+        animationType: DialogTransitionType.scaleRotate,
+        duration: const Duration(milliseconds: 300));
   }
 
   @override
@@ -58,9 +62,7 @@ class _MyHomePageState extends State<MyHomePage> {
           fit: BoxFit.scaleDown,
           width: MediaQuery.of(context).size.width * 0.6,
           height: MediaQuery.of(context).size.height * 0.6,
-          child: InkWell(
-            onTap: summonBeerQuestion,
-          ),
+          child: InkWell(onTap: summonBeerQuestion),
         ),
       )),
     ));
